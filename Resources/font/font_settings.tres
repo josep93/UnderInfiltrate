@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b7erfv8f85b0m"]
+
+[ext_resource type="FontFile" uid="uid://b3q4j4vgkcx2i" path="res://Resources/font/DTM-Mono.otf" id="1_0o0vm"]
+
+[resource]
+font = ExtResource("1_0o0vm")
+font_size = 48
+outline_size = 3
+outline_color = Color(0, 0, 1, 1)

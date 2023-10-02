@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chvrnm62r3clh"]
+
+[ext_resource type="Script" path="res://Scenes/elements/door_controller.gd" id="1_owvh8"]
+[ext_resource type="PackedScene" uid="uid://db2a5v1s2uhy6" path="res://Scenes/elements/message.tscn" id="2_7o1oo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uoksl"]
+radius = 18.0278
+
+[node name="door_controller" type="Node2D"]
+script = ExtResource("1_owvh8")
+
+[node name="TriggerArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("CircleShape2D_uoksl")
+
+[node name="message" parent="." instance=ExtResource("2_7o1oo")]
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]

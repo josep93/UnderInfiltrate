@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce4bnpcfdggx8"]
+
+[ext_resource type="Script" path="res://Scenes/elements/text_controller.gd" id="1_68f4q"]
+[ext_resource type="PackedScene" uid="uid://db2a5v1s2uhy6" path="res://Scenes/elements/message.tscn" id="2_vei28"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jqd7"]
+radius = 32.0
+
+[node name="text_controller" type="Node2D"]
+script = ExtResource("1_68f4q")
+message_speed = 20
+
+[node name="MessageArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageArea"]
+shape = SubResource("CircleShape2D_6jqd7")
+
+[node name="message" parent="." instance=ExtResource("2_vei28")]
+z_index = 99
+offset_left = -44.0
+offset_top = -29.0
+offset_right = 836.0
+offset_bottom = 471.0
+
+[connection signal="body_entered" from="MessageArea" to="." method="_on_message_area_body_entered"]
+[connection signal="body_exited" from="MessageArea" to="." method="_on_message_area_body_exited"]

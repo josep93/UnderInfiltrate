@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://db2a5v1s2uhy6"]
+
+[ext_resource type="Script" path="res://Scenes/elements/message.gd" id="1_1rijp"]
+[ext_resource type="LabelSettings" uid="uid://b7erfv8f85b0m" path="res://Resources/font/font_settings.tres" id="1_hlawo"]
+[ext_resource type="AudioStream" uid="uid://c2bj5r04ec2bx" path="res://Resources/sound/effects/rueba_kick.wav" id="3_q8qx3"]
+
+[node name="message" type="Label"]
+offset_left = -34.0
+offset_top = -28.0
+offset_right = 662.0
+offset_bottom = 252.0
+scale = Vector2(0.1, 0.1)
+label_settings = ExtResource("1_hlawo")
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+script = ExtResource("1_1rijp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q8qx3")

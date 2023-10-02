@@ -1,0 +1,193 @@
+[gd_scene load_steps=25 format=3 uid="uid://btr0602vkuxp5"]
+
+[ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_eit8c"]
+[ext_resource type="Texture2D" uid="uid://cib0728xw7huw" path="res://Resources/image/tiles/TileSet.png" id="1_w1si2"]
+[ext_resource type="Texture2D" uid="uid://bpaf507x7mwrm" path="res://Resources/image/player/Player.png" id="2_4r84l"]
+[ext_resource type="Script" path="res://Scenes/player/state_machine.gd" id="3_r8dbw"]
+[ext_resource type="Script" path="res://Scenes/player/states/run.gd" id="4_2hyuw"]
+[ext_resource type="Script" path="res://Scenes/player/states/surface.gd" id="5_1pjwr"]
+[ext_resource type="Script" path="res://Scenes/player/kamirium.gd" id="6_f1iyr"]
+[ext_resource type="Script" path="res://Scenes/player/states/walk.gd" id="6_gfcvs"]
+[ext_resource type="Theme" uid="uid://cfmlutypc3m08" path="res://Scenes/player/progress_bar.tres" id="7_4o7rj"]
+[ext_resource type="Script" path="res://Scenes/player/actionable_area.gd" id="9_x5okr"]
+[ext_resource type="Script" path="res://Scenes/player/stop.gd" id="10_rj813"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n5sw"]
+size = Vector2(10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t34c6"]
+atlas = ExtResource("1_w1si2")
+region = Rect2(340, 153, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adbnk"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qblcx"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53i00"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqf3p"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iwqp"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g01xn"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvk0c"]
+atlas = ExtResource("2_4r84l")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjk7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t34c6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adbnk")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qblcx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53i00")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqf3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g01xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvk0c")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68ajg"]
+size = Vector2(8, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j5en"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei0pe"]
+size = Vector2(6, 12)
+
+[node name="player" type="CharacterBody2D"]
+modulate = Color(0.780392, 0.780392, 0.780392, 1)
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -8)
+collision_mask = 6
+script = ExtResource("1_eit8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4n5sw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yjk7x")
+animation = &"fall"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="kamirium" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 29.0
+offset_top = 601.0
+offset_right = 514.0
+offset_bottom = 628.0
+scale = Vector2(0.644076, 0.865908)
+theme = ExtResource("7_4o7rj")
+value = 75.0
+script = ExtResource("6_f1iyr")
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("3_r8dbw")
+
+[node name="run" type="Node" parent="state_machine"]
+script = ExtResource("4_2hyuw")
+JUMP_VELOCITY = -300.0
+
+[node name="surface" type="Node" parent="state_machine"]
+script = ExtResource("5_1pjwr")
+
+[node name="coyote_time" type="Timer" parent="state_machine/surface"]
+wait_time = 0.2
+one_shot = true
+
+[node name="earth_generator" type="Timer" parent="state_machine/surface"]
+wait_time = 0.2
+
+[node name="walk" type="Node" parent="state_machine"]
+script = ExtResource("6_gfcvs")
+
+[node name="stop" type="Node" parent="state_machine"]
+script = ExtResource("10_rj813")
+
+[node name="GroundArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundArea"]
+shape = SubResource("RectangleShape2D_68ajg")
+
+[node name="ActionableArea" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_x5okr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableArea"]
+shape = SubResource("RectangleShape2D_6j5en")
+
+[node name="WorldArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldArea"]
+shape = SubResource("RectangleShape2D_ei0pe")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[connection signal="timeout" from="state_machine/surface/coyote_time" to="state_machine/surface" method="_on_coyote_time_timeout"]
+[connection signal="timeout" from="state_machine/surface/earth_generator" to="state_machine/surface" method="_on_earth_generator_timeout"]
+[connection signal="body_entered" from="GroundArea" to="state_machine/surface" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="GroundArea" to="state_machine/surface" method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="ActionableArea" to="ActionableArea" method="_on_area_entered"]
+[connection signal="area_exited" from="ActionableArea" to="ActionableArea" method="_on_area_exited"]
+[connection signal="area_entered" from="WorldArea" to="." method="_on_world_area_area_entered"]
