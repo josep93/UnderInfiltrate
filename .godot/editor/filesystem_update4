@@ -1,8 +1,9 @@
-res://Scenes/levels/level7/level.tscn
+res://Scenes/elements/camera.tscn
 res://Scenes/player/earth_move.gd
 res://Scenes/player/progress_bar.tres
 res://Resources/image/tiles/level.tres
 res://Resources/font/font_settings.tres
+res://Scenes/elements/door_controller.gd
 res://Scenes/levels/menu/level.tscn
 res://Scenes/levels/level1/level.tscn
 res://Scenes/levels/level3/level.tscn
@@ -11,5 +12,5 @@ res://Scenes/levels/level5/level.tscn
 res://Scenes/levels/level6/level.tscn
 res://Scenes/player/player.tscn
 res://Scenes/player/earth_move.tscn
-res://Scenes/elements/camera.tscn
 res://Scenes/levels/scene_controller.tscn
+res://Scenes/levels/level7/level.tscn
