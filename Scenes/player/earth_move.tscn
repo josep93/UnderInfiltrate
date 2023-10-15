@@ -1,58 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://m5w23evsnx0f"]
+[gd_scene load_steps=3 format=3 uid="uid://m5w23evsnx0f"]
 
-[ext_resource type="Texture2D" uid="uid://gnh54g7hopd6" path="res://Resources/image/player/EarthMove.png" id="1_gflp0"]
 [ext_resource type="Script" path="res://Scenes/player/earth_move.gd" id="1_jjiye"]
-[ext_resource type="AudioStream" uid="uid://dbnm5mthdsmsx" path="res://Resources/sound/effects/magic-earth-spell-impact-punch.wav" id="3_640eq"]
-[ext_resource type="AudioStream" uid="uid://c8mw1pcnnkxfq" path="res://Resources/sound/effects/stones_kwandalist.wav" id="3_k65q2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4stom"]
-atlas = ExtResource("1_gflp0")
-region = Rect2(60, 0, 20, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm24x"]
-atlas = ExtResource("1_gflp0")
-region = Rect2(40, 0, 20, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gek26"]
-atlas = ExtResource("1_gflp0")
-region = Rect2(20, 0, 20, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uffj2"]
-atlas = ExtResource("1_gflp0")
-region = Rect2(0, 0, 20, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xd36l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4stom")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wm24x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gek26")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uffj2")
-}],
-"loop": false,
-"name": &"default",
-"speed": 6.0
-}]
+[ext_resource type="Texture2D" uid="uid://bqien4yw5rjbb" path="res://Resources/image/player/Rocks-Sheet.png" id="4_1qfeh"]
 
 [node name="earth_move" type="Node2D"]
 z_index = 2
 z_as_relative = false
-scale = Vector2(0.75, 0.75)
 script = ExtResource("1_jjiye")
-sounds = Array[AudioStream]([ExtResource("3_k65q2"), ExtResource("3_640eq")])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_xd36l")
-frame_progress = 0.777721
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_1qfeh")
+hframes = 2
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

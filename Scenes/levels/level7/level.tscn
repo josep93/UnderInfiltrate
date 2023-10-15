@@ -1,0 +1,291 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3uatjt81fkop"]
+
+[ext_resource type="PackedScene" uid="uid://sa7dvefkdrk5" path="res://Scenes/elements/camera.tscn" id="1_3p6h5"]
+[ext_resource type="Script" path="res://Scenes/levels/level7/final_level.gd" id="1_g2luy"]
+[ext_resource type="PackedScene" uid="uid://ci4g078ncojc" path="res://Scenes/levels/tile_map.tscn" id="2_8qnk2"]
+[ext_resource type="LabelSettings" uid="uid://b7erfv8f85b0m" path="res://Resources/font/font_settings.tres" id="3_uo5id"]
+
+[sub_resource type="Animation" id="Animation_5asy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label4:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label5:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label6:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label7:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2tv1p"]
+resource_name = "ending"
+length = 42.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label4:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(18, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label5:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(26, 33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label6:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(34.5, 37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label7:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(39, 42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_050ck"]
+_data = {
+"RESET": SubResource("Animation_5asy0"),
+"ending": SubResource("Animation_2tv1p")
+}
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_g2luy")
+
+[node name="camera" parent="." instance=ExtResource("1_3p6h5")]
+
+[node name="tile_map" parent="." instance=ExtResource("2_8qnk2")]
+layer_2/tile_data = PackedInt32Array(-327689, 1376256, 11, -262153, 1376256, 11, -196617, 1376256, 11, -131081, 1376256, 11, -65545, 1376256, 11, -9, 1376256, 11, 65527, 1376256, 11, 131063, 1376256, 11, 196599, 1376256, 11, 262135, 1376256, 11, 327671, 1376256, 11, 393207, 1376256, 11, -327688, 1376256, 11, -262152, 1376256, 11, -196616, 1376256, 11, -131080, 1376256, 11, -65544, 1376256, 11, -8, 1376256, 11, 65528, 1376256, 11, 131064, 1376256, 11, 196600, 1376256, 11, 262136, 1376256, 11, 327672, 1376256, 11, 393208, 1376256, 11, -327687, 1376256, 11, -262151, 1376256, 11, -196615, 1376256, 11, -131079, 1376256, 11, -65543, 1376256, 11, -7, 1376256, 11, 65529, 1376256, 11, 131065, 1376256, 11, 196601, 1376256, 11, 262137, 1376256, 11, 327673, 1376256, 11, 393209, 1376256, 11, -327686, 1376256, 11, -262150, 1376256, 11, -196614, 1376256, 11, -131078, 1376256, 11, -65542, 1376256, 11, -6, 1376256, 11, 65530, 1376256, 11, 131066, 1376256, 11, 196602, 1376256, 11, 262138, 1376256, 11, 327674, 1376256, 11, 393210, 1376256, 11, -327685, 1376256, 11, -262149, 1376256, 11, -196613, 1376256, 11, -131077, 1376256, 11, -65541, 1376256, 11, -5, 1376256, 11, 65531, 1376256, 11, 131067, 1376256, 11, 196603, 1376256, 11, 262139, 1376256, 11, 327675, 1376256, 11, 393211, 1376256, 11, -327684, 1376256, 11, -262148, 1376256, 11, -196612, 1376256, 11, -131076, 1376256, 11, -65540, 1376256, 11, -4, 1376256, 11, 65532, 1376256, 11, 131068, 1376256, 11, 196604, 1376256, 11, 262140, 1376256, 11, 327676, 1376256, 11, 393212, 1376256, 11, -327683, 1376256, 11, -262147, 1376256, 11, -196611, 1376256, 11, -131075, 1376256, 11, -65539, 1376256, 11, -3, 1376256, 11, 65533, 1376256, 11, 131069, 1376256, 11, 196605, 1376256, 11, 262141, 1376256, 11, 327677, 1376256, 11, 393213, 1376256, 11, -327682, 1376256, 11, -262146, 1376256, 11, -196610, 1376256, 11, -131074, 1376256, 11, -65538, 1376256, 11, -2, 1376256, 11, 65534, 1376256, 11, 131070, 1376256, 11, 196606, 1376256, 11, 262142, 1376256, 11, 327678, 1376256, 11, 393214, 1376256, 11, -327681, 1376256, 11, -262145, 1376256, 11, -196609, 1376256, 11, -131073, 1376256, 11, -65537, 1376256, 11, -1, 1376256, 11, 65535, 1376256, 11, 131071, 1376256, 11, 196607, 1376256, 11, 262143, 1376256, 11, 327679, 1376256, 11, 393215, 1376256, 11, -393216, 1376256, 11, -327680, 1376256, 11, -262144, 1376256, 11, -196608, 1376256, 11, -131072, 1376256, 11, -65536, 1376256, 11, 0, 1376256, 11, 65536, 1376256, 11, 131072, 1376256, 11, 196608, 1376256, 11, 262144, 1376256, 11, 327680, 1376256, 11, -393215, 1376256, 11, -327679, 1376256, 11, -262143, 1376256, 11, -196607, 1376256, 11, -131071, 1376256, 11, -65535, 1376256, 11, 1, 1376256, 11, 65537, 1376256, 11, 131073, 1376256, 11, 196609, 1376256, 11, 262145, 1376256, 11, 327681, 1376256, 11, -393214, 1376256, 11, -327678, 1376256, 11, -262142, 1376256, 11, -196606, 1376256, 11, -131070, 1376256, 11, -65534, 1376256, 11, 2, 1376256, 11, 65538, 1376256, 11, 131074, 1376256, 11, 196610, 1376256, 11, 262146, 1376256, 11, 327682, 1376256, 11, -393213, 1376256, 11, -327677, 1376256, 11, -262141, 1376256, 11, -196605, 1376256, 11, -131069, 1376256, 11, -65533, 1376256, 11, 3, 1376256, 11, 65539, 1376256, 11, 131075, 1376256, 11, 196611, 1376256, 11, 262147, 1376256, 11, 327683, 1376256, 11, -393212, 1376256, 11, -327676, 1376256, 11, -262140, 1376256, 11, -196604, 1376256, 11, -131068, 1376256, 11, -65532, 1376256, 11, 4, 1376256, 11, 65540, 1376256, 11, 131076, 1376256, 11, 196612, 1376256, 11, 262148, 1376256, 11, 327684, 1376256, 11, -393211, 1376256, 11, -327675, 1376256, 11, -262139, 1376256, 11, -196603, 1376256, 11, -131067, 1376256, 11, -65531, 1376256, 11, 5, 1376256, 11, 65541, 1376256, 11, 131077, 1376256, 11, 196613, 1376256, 11, 262149, 1376256, 11, 327685, 1376256, 11, -393210, 1376256, 11, -327674, 1376256, 11, -262138, 1376256, 11, -196602, 1376256, 11, -131066, 1376256, 11, -65530, 1376256, 11, 6, 1376256, 11, 65542, 1376256, 11, 131078, 1376256, 11, 196614, 1376256, 11, 262150, 1376256, 11, 327686, 1376256, 11, -393209, 1376256, 11, -327673, 1376256, 11, -262137, 1376256, 11, -196601, 1376256, 11, -131065, 1376256, 11, -65529, 1376256, 11, 7, 1376256, 11, 65543, 1376256, 11, 131079, 1376256, 11, 196615, 1376256, 11, 262151, 1376256, 11, 327687, 1376256, 11, -393208, 1376256, 11, -327672, 1376256, 11, -262136, 1376256, 11, -196600, 1376256, 11, -131064, 1376256, 11, -65528, 1376256, 11, 8, 1376256, 11, 65544, 1376256, 11, 131080, 1376256, 11, 196616, 1376256, 11, 262152, 1376256, 11, 327688, 1376256, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_050ck")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -88.0
+offset_top = -56.0
+offset_right = -48.0
+offset_bottom = -33.0
+scale = Vector2(0.1, 0.1)
+text = "Hours and days without stopping, surrounded only by rocks 
+and minerals without a hint of light.
+"
+label_settings = ExtResource("3_uo5id")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -88.0
+offset_top = -40.0
+offset_right = 318.0
+offset_bottom = 21.0
+scale = Vector2(0.1, 0.1)
+text = "The cold and humidity test my determination and the stale air
+my resistance.
+"
+label_settings = ExtResource("3_uo5id")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -88.0
+offset_top = -24.0
+offset_right = 1681.0
+offset_bottom = 98.0
+scale = Vector2(0.1, 0.1)
+text = "But a ray of light finally appears before me when caressed
+by a light breeze of air.
+"
+label_settings = ExtResource("3_uo5id")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -88.0
+offset_top = -8.0
+offset_right = 1826.0
+offset_bottom = 175.0
+scale = Vector2(0.1, 0.1)
+text = "Attracted by this pleasant sensation accompanied by hope, i follow
+the trail until I finally see the first rays of light
+after half a month."
+label_settings = ExtResource("3_uo5id")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -88.0
+offset_top = 16.0
+offset_right = 4262.0
+offset_bottom = 199.0
+scale = Vector2(0.1, 0.1)
+text = "Now I will proceed to write down the route of the trip and I'll
+be able to continue with the mission that was entrusted
+to me when leaving Arcrentia"
+label_settings = ExtResource("3_uo5id")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label6" type="Label" parent="."]
+offset_left = -88.0
+offset_top = 32.0
+offset_right = 1672.0
+offset_bottom = 215.0
+scale = Vector2(0.1, 0.1)
+text = "My journey has only just begun"
+label_settings = ExtResource("3_uo5id")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -8.0
+offset_top = 48.0
+offset_right = 1752.0
+offset_bottom = 231.0
+scale = Vector2(0.1, 0.1)
+text = "Thanks for playing"
+label_settings = ExtResource("3_uo5id")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0

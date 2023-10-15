@@ -36,7 +36,7 @@ message_text = "Press (X) to Enter"
 
 [node name="text_controller" parent="." instance=ExtResource("3_2btea")]
 position = Vector2(144, -284)
-message_list = Array[String](["Press (SHIFT) to excavate"])
+message_list = Array[String](["Press (SHIFT) to enter in surface mode"])
 can_action = false
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -2,7 +2,7 @@ extends State
 
 @onready var actionable_area = $"../../ActionableArea"
 @onready var animator = $"../../AnimatedSprite2D"
-@onready var kamirium = $"../../CanvasLayer/kamirium"
+@onready var kamirium = $"../../CanvasLayer/kmr"
 
 @export var SPEED = 35.0
 @export var ACCELERATION : float = 600

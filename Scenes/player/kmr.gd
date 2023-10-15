@@ -1,7 +1,7 @@
 extends ProgressBar
 
 var player : Player
-var units_per_second := 35
+var units_per_second := 5
 var operation := 1
 
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +20,9 @@ func _process(delta):
 func set_operation(new_operation : int):
 	if new_operation != -1 and new_operation != 1: return
 	operation = new_operation
+	units_per_second = 5
+	if new_operation == 1:
+		units_per_second = 50
+
+func reduce_amount(amount : float):
+	value = value - amount
